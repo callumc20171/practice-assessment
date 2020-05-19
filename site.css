@@ -1,0 +1,45 @@
+/*
+Colour pallette:
+
+Off white - #EAEAEC
+Accents - #04B3D5, #FFCC85
+Black/Grey - #6C6D71 / #B2BAC9
+
+*/
+
+
+body {
+	background-color: #EAEAEC;
+	margin: 0;
+	width: 100%;
+}
+
+h1 {
+	color: #04B3D5;
+	font-family: Georgia, 'Courier Prime', monospace;
+}
+
+p {
+	font-family: 'Courier Prime', monospace;
+	font-size: 24px;
+	color: #6C6D71;
+}
+
+#Header {
+	border-bottom: 3px solid #04B3D5;
+	text-align: center;}
+
+#MainTitle {
+	font-size: 56px;
+	margin-bottom: 4px;
+}
+
+#Footer {
+	position: absolute;
+	width: 98.75%;
+	bottom: 0;
+    margin: 0 auto;
+	background-color: #B2BAC9;
+	padding: 12px;
+	border-top: 2px solid #04B3D5;
+}
