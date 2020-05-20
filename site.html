@@ -2,11 +2,78 @@
 	<title>White Echo Motel Reservation</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./site.css">
 </head>
 <body>
 	<div id="Header">
+		<img src="./white_echo logo.png" id="HeaderLogo">
 		<h1 id="MainTitle">White Echo Motel</h1>
+	</div>
+
+	<div class="section" id="StepForm">
+		<div class="tab">
+			<h2 class="title">Select your room:</h2>
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+			  <!-- Full-width images with number and caption text -->
+			  <div class="Slides fade">
+			    <div class="numbertext">1 / 4</div>
+			    <img src="./family suite.jpg" style="width:100%">
+			    <div class="slideCaption">Family Suite</div>
+			  </div>
+
+			  <div class="Slides fade">
+			    <div class="numbertext">2 / 4</div>
+			    <img src="./two bedroom suite.jpg" style="width:100%">
+			    <div class="slideCaption">Two bedroom Suite</div>
+			  </div>
+
+			  <div class="Slides fade">
+			    <div class="numbertext">3 / 4</div>
+			    <img src="./executive suite.jpg" style="width:100%">
+			    <div class="slideCaption">Executive Suite</div>
+			  </div>
+
+			  <div class="Slides fade">
+			    <div class="numbertext">4 / 4</div>
+			    <img src="./studio room.jpg" style="width:100%">
+			    <div class="slideCaption">Studio room</div>
+			  </div>
+
+			  <!-- Next and previous buttons -->
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span>
+			  <span class="dot" onclick="currentSlide(2)"></span>
+			  <span class="dot" onclick="currentSlide(3)"></span>
+			</div>
+
+		</div>
+
+		<div class="tab">
+			
+		</div>
+		<div style="overflow:auto;">
+		  <div style="float:right;">
+		    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+		    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+		  </div>
+		</div>
+		  <!-- Circles which indicates the steps of the form: -->
+		  <div style="text-align:center;margin-top:40px;">
+		    <span class="step"></span>
+		    <span class="step"></span>
+		    <span class="step"></span>
+		    <span class="step"></span>
+		  </div>
+		</div>
 	</div>
 
 	<footer>
@@ -14,4 +81,6 @@
 			<p>Site devoloped by Callum.</p>
 		</div>
 	</footer>
+
+	<script src="./site.js"></script>
 </body>
