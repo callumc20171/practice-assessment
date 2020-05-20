@@ -21,25 +21,25 @@
 			  <div class="Slides fade">
 			    <div class="numbertext">1 / 4</div>
 			    <img src="./family suite.jpg" style="width:100%">
-			    <div class="slideCaption">Family Suite</div>
+			    <div class="slideCaption">Family Suite: $289 per night</div>
 			  </div>
 
 			  <div class="Slides fade">
 			    <div class="numbertext">2 / 4</div>
 			    <img src="./two bedroom suite.jpg" style="width:100%">
-			    <div class="slideCaption">Two bedroom Suite</div>
+			    <div class="slideCaption">Two bedroom Suite: $329 per night</div>
 			  </div>
 
 			  <div class="Slides fade">
 			    <div class="numbertext">3 / 4</div>
 			    <img src="./executive suite.jpg" style="width:100%">
-			    <div class="slideCaption">Executive Suite</div>
+			    <div class="slideCaption">Executive Studio: $249 per night</div>
 			  </div>
 
 			  <div class="Slides fade">
 			    <div class="numbertext">4 / 4</div>
 			    <img src="./studio room.jpg" style="width:100%">
-			    <div class="slideCaption">Studio room</div>
+			    <div class="slideCaption">Studio room: $219 per night</div>
 			  </div>
 
 			  <!-- Next and previous buttons -->
@@ -54,11 +54,57 @@
 			  <span class="dot" onclick="currentSlide(2)"></span>
 			  <span class="dot" onclick="currentSlide(3)"></span>
 			</div>
+			<input type="button" value="Family Suite" class="suiteButton" id="FamilySuite" onclick="selectRoom(1, this)">
+			<input type="button" value="Two bedroom Suite" class="suiteButton" id="TwoBedSuite" onclick="selectRoom(2, this)">
+			<input type="button" value="Executive Studio" class="suiteButton" id="ExecStudio" onclick="selectRoom(3, this)">
+			<input type="button" value="Studio Room" class="suiteButton" id="StudioRoom" onclick="selectRoom(4, this)">
+
 
 		</div>
 
 		<div class="tab">
-			
+			<h2 class="title">Select your room:</h2><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="50" for="extras">$50 - Facial</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Massage" data-price="60" for="extras">$60 - Massage</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="25" for="extras">$25 per room/day - Breakfast</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="0" for="extras">FREE - Cot</label><br>
+			<label>Extra information:<textarea id="ExtraDetail"></textarea></label>
+		</div>
+
+		<div class="tab">
+			<h1 class="title">Check in details</h1>
+			<label>Check in date: <input type="date" id="CheckIn"></label><br>
+			<label>
+				<select class="selectDropdown" id="Days">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3" selected>3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				Nights
+			</label>
+			<label id="CheckoutDate">TODO ADD JS AUTO CREATE</label>
+		</div>
+
+		<div class="tab">
+			<h1 class="title">Booking summary</h1>
+			<label id="RoomType"></label>
+			<label id="PricePerNight"></label>
+			<label id="Dates"></label>
+			<label id="NumNights"></label>
+			<label id="Extras"></label>
+			<label id="Price"></label>
+		</div>
+
+		<div class="tab">
+			<h1 class="title">Personal details</h1>
+			<label>Name: <input type="text" class="DetailInput" id="NameInput" placeholder="Your name"></label>
 		</div>
 		<div style="overflow:auto;">
 		  <div style="float:right;">

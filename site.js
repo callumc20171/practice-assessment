@@ -28,6 +28,15 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+function selectRoom(room, selectedButton) {
+  showSlides(room);
+  let buttons = document.getElementsByClassName("suiteButton");
+  for (let room of buttons) {
+    room.removeAttribute("selected");
+  }
+  selectedButton.setAttribute("selected", "true");
+}
+
 //End Slideshow JS
 
 //Step by step form JS

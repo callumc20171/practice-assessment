@@ -28,6 +28,10 @@ p {
 
 * {box-sizing:border-box}
 
+.suiteButton[selected] {
+  background-color: #FFFFFF;
+}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
