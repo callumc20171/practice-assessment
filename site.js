@@ -1,3 +1,7 @@
+//Firebase config 
+
+var database = firebase.database();
+
 //Slideshow JS
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -29,12 +33,14 @@ function showSlides(n) {
 }
 
 function selectRoom(room, selectedButton) {
-  showSlides(room);
+  currentSlide(room);
   let buttons = document.getElementsByClassName("suiteButton");
-  for (let room of buttons) {
-    room.removeAttribute("selected");
+  for (let roomButton of buttons) {
+    roomButton.removeAttribute("selected");
   }
   selectedButton.setAttribute("selected", "true");
+  SelectedRoom.style.backgroundImage = "url('./" + selectedButton.value + ".jpg')";
+  SelectedRoom.style.display = "block";
 }
 
 //End Slideshow JS
