@@ -165,7 +165,7 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 
 .hoverText {
   color: #EAEAEC;
-  font-size: 32px;
+  font-size: 24px;
   font-family: "Josefin Sans", monospace;
   position: absolute;
   top: 50%;

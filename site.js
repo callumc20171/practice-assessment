@@ -21,26 +21,24 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("Slides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  else if (n < 1) {slideIndex = slides.length}
+  else {
+    slideIndex = n;
+  }
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
 
-function selectRoom(room, selectedButton) {
-  currentSlide(room);
-  let buttons = document.getElementsByClassName("suiteButton");
+  console.log(slideIndex);
+  var buttons = document.getElementsByClassName("suiteButton");
   for (let roomButton of buttons) {
     roomButton.removeAttribute("selected");
   }
-  selectedButton.setAttribute("selected", "true");
-  SelectedRoom.style.backgroundImage = "url('./" + selectedButton.value + ".jpg')";
+  buttons[slideIndex-1].setAttribute("selected", "true");
+  SelectedRoom.style.backgroundImage = "url('./" + buttons[slideIndex-1].value + ".jpg')";
   SelectedRoom.style.display = "block";
+
 }
 
 //End Slideshow JS
@@ -120,4 +118,31 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
+function dateChecker() {
+  if (CheckIn.value != "") {
+    var checkOutDate = addDays(new Date(CheckIn.value), Days.value);
+    CheckoutDate.innerHTML = "Check out date: " + stringifyDate(checkOutDate);
+  }
+  
+}
+
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + Number(days));
+  return result;
+}
+
+function stringifyDate(date) {
+
+  var day = ("0" + date.getDate()).slice(-2);
+  var month = ("0" + (date.getMonth() + 1)).slice(-2);
+
+  var stringDate = date.getFullYear()+"-"+(month)+"-"+(day);
+  return stringDate;
+}
+
 //End step by step form
+
+CheckIn.min = stringifyDate(new Date());
+CheckIn.addEventListener("change", dateChecker);
+Days.addEventListener("change", dateChecker);

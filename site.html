@@ -27,9 +27,13 @@
 			    <img class="slideShowImage" src="./family suite.jpg" style="width:100%">
 			    <div class="textOverlay">
 			    	<div class="hoverText">
-			    		Ideal for family or friends.<br>
-			    		Kids can enjoy their own bedroom.<br>
-			    		Ensuite with shower
+			    		Excellent choice for a family or groups of friends wanting more space. Kids
+			    		can enjoy their own bedroom. Ensuite with luxurious walk in shower &amp;
+			    		double showerheads, washer/dryer.<br><br>
+			    		Microwave &amp; refrigerator.<br><br>
+			    		53m², King +
+			    		2 Single beds, 1-4 guests.<br><br>
+			    		Air-conditioning, 2 x 55&quot; flat screen TV with SKY channels, FREE unlimited	WiFi.
 			    	</div>
 			    </div>
 			    <div class="slideCaption">Family Suite: $289 per night</div>
@@ -37,19 +41,51 @@
 
 			  <div class="Slides fade">
 			    <div class="numbertext">2 / 4</div>
-			    <img src="./two bedroom suite.jpg" style="width:100%">
+			    <img class="slideShowImage" src="./two bedroom suite.jpg" style="width:100%">
+			    <div class="textOverlay">
+			    	<div class="hoverText">
+			    		Stunning suites offering sophisticated style and space. Relax in the large
+			    		living/dining area or host friends &amp; colleagues. 2 separate bedrooms both
+			    		with 55&quot; TVs. Bathroom with walk in shower &amp; double showerheads,
+			    		washer &amp; dryer.<br><br>
+			    		65m², Super King + 2 Single beds, 1-4 guests.<br><br>
+			    		Air-conditioning, 3 x 55&quot; flat screen TV with SKY channels, FREE unlimited WiFi.
+			    	</div>
+			    </div>
 			    <div class="slideCaption">Two bedroom Suite: $329 per night</div>
 			  </div>
 
 			  <div class="Slides fade">
 			    <div class="numbertext">3 / 4</div>
-			    <img src="./executive studio.jpg" style="width:100%">
+			    <img class="slideShowImage" src="./executive studio.jpg" style="width:100%">
+			    <div class="textOverlay">
+			    	<div class="hoverText">
+			    		Perfect haven for business and pleasure. Enjoy more space with your own
+			    		lounge area complete with comfortable chaise couch, desk, fridge &amp;
+			    		microwave. Ensuite features bath &amp; separate shower, double handbasins &amp;
+			    		<br><br>
+			    		washer/dryer.<br><br>
+			    		47m², Super King bed, 1-2 guests.<br><br>
+			    		Air-conditioning, 55&quot; flat screen TV with SKY channels, FREE unlimited
+			    		WiFi.
+			    	</div>
+			    </div>
 			    <div class="slideCaption">Executive Studio: $249 per night</div>
 			  </div>
 
 			  <div class="Slides fade">
 			    <div class="numbertext">4 / 4</div>
-			    <img src="./studio room.jpg" style="width:100%">
+			    <img class="slideShowImage" src="./studio room.jpg" style="width:100%">
+			    <div class="textOverlay">
+			    	<div class="hoverText">
+			    		Ideal combination of style and functionality, offering modern ensuite with
+			    		walk-in shower, washer/dryer.<br><br>
+			    		Fridge &amp; microwave<br><br>
+			    		31m², Super King bed, 1-2 guests.<br><br>
+			    		Air-conditioning, 55&quot; flat screen TV with SKY channels<br><br>
+			    		FREE unlimited WiFi.
+			    	</div>
+			    </div>
 			    <div class="slideCaption">Studio room: $219 per night</div>
 			  </div>
 
@@ -59,18 +95,10 @@
 			</div>
 			<br>
 
-			<!-- The dots/circles -->
-			<div style="text-align:center">
-			  <span class="dot" onclick="currentSlide(1)"></span>
-			  <span class="dot" onclick="currentSlide(2)"></span>
-			  <span class="dot" onclick="currentSlide(3)"></span>
-			  <span class="dot" onclick="currentSlide(4)"></span>
-
-			</div>
-			<input type="button" value="Family Suite" class="suiteButton" id="FamilySuite" onclick="selectRoom(1, this)">
-			<input type="button" value="Two bedroom Suite" class="suiteButton" id="TwoBedSuite" onclick="selectRoom(2, this)">
-			<input type="button" value="Executive Studio" class="suiteButton" id="ExecStudio" onclick="selectRoom(3, this)">
-			<input type="button" value="Studio Room" class="suiteButton" id="StudioRoom" onclick="selectRoom(4, this)">
+			<input type="button" value="Family Suite" class="suiteButton" id="FamilySuite" onclick="showSlides(1)">
+			<input type="button" value="Two bedroom Suite" class="suiteButton" id="TwoBedSuite" onclick="showSlides(2)">
+			<input type="button" value="Executive Studio" class="suiteButton" id="ExecStudio" onclick="showSlides(3)">
+			<input type="button" value="Studio Room" class="suiteButton" id="StudioRoom" onclick="showSlides(4)">
 
 
 		</div>
@@ -101,8 +129,8 @@
 					<option value="10">10</option>
 				</select>
 				Nights
-			</label>
-			<label id="CheckoutDate">TODO ADD JS AUTO CREATE</label>
+			</label><br>
+			<label id="CheckoutDate">Check out date: </label>
 		</div>
 
 		<div class="tab">
