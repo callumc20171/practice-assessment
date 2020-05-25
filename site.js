@@ -30,7 +30,6 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
 
-  console.log(slideIndex);
   var buttons = document.getElementsByClassName("suiteButton");
   for (let roomButton of buttons) {
     roomButton.removeAttribute("selected");
@@ -100,6 +99,10 @@ function validateForm() {
       // and set the current valid status to false:
       valid = false;
     }
+
+    if (!y[i].validity.valid) {
+      valid = false;
+    }
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
@@ -121,7 +124,7 @@ function fixStepIndicator(n) {
 function dateChecker() {
   if (CheckIn.value != "") {
     var checkOutDate = addDays(new Date(CheckIn.value), Days.value);
-    CheckoutDate.innerHTML = "Check out date: " + stringifyDate(checkOutDate);
+    CheckoutInput.value = stringifyDate(checkOutDate);
   }
   
 }
