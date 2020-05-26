@@ -149,3 +149,88 @@ function stringifyDate(date) {
 CheckIn.min = stringifyDate(new Date());
 CheckIn.addEventListener("change", dateChecker);
 Days.addEventListener("change", dateChecker);
+
+//Booking information updater
+
+function calculateExtrasCost(extras) {
+  var price = 0;
+  for (let extra of extras) {
+    if (extra.value === "Breakfast") {
+      price += Number(extra.dataset.price) * Days.value;
+    } else {
+      price += extra.dataset.price;
+    }
+  }
+  return price;
+}
+
+function updateBooking() {
+
+  //Get all data from step by step form
+  let chosenRoomButton = document.querySelector(".suiteButton[selected]");
+  var chosenRoom = chosenRoomButton.value;
+  var chosenRoomPrice = Number(chosenRoomButton.dataset.price);
+  var chosenExtras = document.querySelectorAll(".extrasCheckbox:checked");
+  if (chosenExtras !== null) {
+    var extrasCost = calculateExtrasCost(chosenExtras)
+  }
+  var checkInDate = CheckIn.value;
+  var checkOutDate = CheckoutInput.value;
+  var numDays = Days.value;
+  var price = Number(extrasCost) + Number(chosenRoomPrice) * Number(numDays);
+
+  //update labels to show values;
+  RoomType.innerHTML = "Room: " + chosenRoom;
+  PricePerNight.innerHTML = "Price per night: " + chosenRoomPrice;
+  Dates.innerHTML = "Check in date: " + checkInDate + "<br>Check out date: " + checkOutDate;
+  NumDays.innerHTML = "Days: " + numDays;
+  Extras.innerHTML = "Extras: ";
+  var extraValuesArray = []
+  if (chosenExtras === null) {
+    Extras.innerHTML = "";
+  }
+  else {
+    for (let extra of chosenExtras) {
+      extraValuesArray.push(extra.value);
+    }
+    Extras.innerHTML = "Extras: " + extraValuesArray.join(", ");
+
+  }
+  Price.innerHTML = "Total price: $" + price;
+
+  let bookingInfo = {
+    "Room" : chosenRoom,
+    "RoomPrice" : chosenRoomPrice,
+    "Extras" : extraValuesArray,
+    "Check in " : checkInDate,
+    "Check out" : checkOutDate,
+    "Days" : numDays,
+    "Price" : price
+  }
+
+  return bookingInfo;
+
+}
+
+function addBookingListeners() {
+  var inputs = document.getElementsByTagName("input");
+  for (let input of inputs) {
+    input.addEventListener("change", updateBooking);
+  }
+  Days.addEventListener("change", updateBooking);
+}
+
+function pushToFirebase() {
+  var bookingInfo = updateBooking();
+  bookingInfo.name = NameInput.value;
+  bookingInfo.email = EmailInput.value;
+  bookingInfo.phone = CellInput.value;
+  let ticketNumber = Math.round(Math.random() * 10000000);
+
+
+  database.ref("bookings/" + ticketNumber).set(bookingInfo);
+  return true;
+}
+
+
+addBookingListeners();

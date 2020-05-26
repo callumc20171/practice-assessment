@@ -95,10 +95,10 @@
 			</div>
 			<br>
 
-			<input type="button" value="Family Suite" class="suiteButton" id="FamilySuite" onclick="showSlides(1)">
-			<input type="button" value="Two bedroom Suite" class="suiteButton" id="TwoBedSuite" onclick="showSlides(2)">
-			<input type="button" value="Executive Studio" class="suiteButton" id="ExecStudio" onclick="showSlides(3)">
-			<input type="button" value="Studio Room" class="suiteButton" id="StudioRoom" onclick="showSlides(4)">
+			<input type="button" value="Family Suite" data-price="289" class="suiteButton" id="FamilySuite" onclick="showSlides(1)">
+			<input type="button" value="Two bedroom Suite" data-price="329" class="suiteButton" id="TwoBedSuite" onclick="showSlides(2)">
+			<input type="button" value="Executive Studio" data-price="249" class="suiteButton" id="ExecStudio" onclick="showSlides(3)">
+			<input type="button" value="Studio Room" data-price="219" class="suiteButton" id="StudioRoom" onclick="showSlides(4)">
 
 
 		</div>
@@ -107,8 +107,8 @@
 			<h2 class="title">Select your room:</h2><br>
 			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="50" for="extras">$50 - Facial</label><br>
 			<label><input type="checkbox" class="extrasCheckbox" value="Massage" data-price="60" for="extras">$60 - Massage</label><br>
-			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="25" for="extras">$25 per room/day - Breakfast</label><br>
-			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="0" for="extras">FREE - Cot</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Breakfast" data-price="25" for="extras">$25 per day - Breakfast</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Cot" data-price="0" for="extras">FREE - Cot</label><br>
 			<label>Extra information:<textarea id="ExtraDetail"></textarea></label>
 		</div>
 
@@ -128,19 +128,19 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-				Nights
+				Days
 			</label><br>
 			<label id="CheckoutDate">Check out date: <input type="date" id="CheckoutInput" disabled></label>
 		</div>
 
 		<div class="tab">
 			<h1 class="title">Booking summary</h1>
-			<label id="RoomType"></label>
-			<label id="PricePerNight"></label>
-			<label id="Dates"></label>
-			<label id="NumNights"></label>
-			<label id="Extras"></label>
-			<label id="Price"></label>
+			<label id="RoomType"></label><br>
+			<label id="PricePerNight"></label><br>
+			<label id="Dates"></label><br>
+			<label id="NumDays"></label><br>
+			<label id="Extras"></label><br>
+			<label id="Price"></label><br>
 		</div>
 
 		<div class="tab">
