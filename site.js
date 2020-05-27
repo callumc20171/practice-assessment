@@ -227,7 +227,7 @@ function pushToFirebase(ticket) {
   bookingInfo.phone = CellInput.value;
 
 
-  //database.ref("bookings/" + ticket).set(bookingInfo);
+  database.ref("bookings/" + ticket).set(bookingInfo);
   StepForm.style.display = "none";
   ConfirmOverlay.style.display = "block";
 }
