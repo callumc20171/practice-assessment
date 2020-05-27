@@ -7,6 +7,10 @@ Black/Grey - #6C6D71 / #B2BAC9
 
 */
 
+* {
+  font-family: "Josefin Sans", monospace;
+}
+
 
 body {
 	background-color: #F6F6F8;
@@ -49,6 +53,67 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
 input:invalid {
   background-color: pink;
 }
+
+input[type=radio], input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+
+
+input[type=radio], input[type=checkbox]:hover {
+  background: #9faab7;
+}
+
+
+input[type=radio], input[type=checkbox]:checked {
+  background: #04B3D5;
+}
+
+
+input[type=radio], input[type=checkbox]:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "\2713";;
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+
+
+input[type=radio], input[type=checkbox]:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #04B3D5;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
 
 .suiteButton[selected] {
   background-color: #6C6D71;
@@ -217,7 +282,6 @@ input:invalid {
 .step.finish {
   background-color: #B2BAC9;
 }
-
 
 #Header {
 	border-bottom: 3px solid #04B3D5;
