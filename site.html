@@ -6,6 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="./site.css">
 </head>
 <body>
+	<div id="ConfirmOverlay">
+		<h1 class="title">Your ticket: </h1>
+		<p>Your booking has been submitted.</p>
+		<a href="javascript:void(0);" onclick="location.reload()" id="ReloadButton">&times</a>
+	</div>
 	<div id="Header">
 		<img src="./white_echo logo.png" id="HeaderLogo">
 		<h1 id="MainTitle">White Echo Motel</h1>
@@ -145,9 +150,9 @@
 
 		<div class="tab">
 			<h1 class="title">Personal details</h1>
-			<label>Name: <input type="text" class="DetailInput" id="NameInput" placeholder="Your name" pattern="[a-zA-Z]\w{2,32}"></label><br>
-			<label>Email: <input type="email" class="DetailInput" id="EmailInput" placeholder="your@email.com" pattern=""></label><br>
-			<label>Phone: <input type="text" class="DetailInput" id="CellInput" placeholder="028436473" pattern="02[-9]\d{6,8}"></label>
+			<label>Name: <input type="text" class="DetailInput" id="NameInput" placeholder="Your name" pattern="^(\w\w+)\s(\w+)$"></label><br>
+			<label>Email: <input type="email" class="DetailInput" id="EmailInput" placeholder="your@email.com"></label><br>
+			<label>Phone: <input type="text" class="DetailInput" id="CellInput" placeholder="028436473" pattern="02[0-9]\d{6,8}"></label>
 		</div>
 		<div style="overflow:auto;">
 		  <div style="float:right;">

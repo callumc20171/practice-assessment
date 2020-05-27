@@ -78,7 +78,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    generateTicket(Math.round(Math.random() * 10000000)); //generate ticket and push to firebase
     return false;
   }
   // Otherwise, display the correct tab:
@@ -156,9 +156,9 @@ function calculateExtrasCost(extras) {
   var price = 0;
   for (let extra of extras) {
     if (extra.value === "Breakfast") {
-      price += Number(extra.dataset.price) * Days.value;
+      price += Number(extra.dataset.price) * Number(Days.value);
     } else {
-      price += extra.dataset.price;
+      price += Number(extra.dataset.price);
     }
   }
   return price;
@@ -220,17 +220,27 @@ function addBookingListeners() {
   Days.addEventListener("change", updateBooking);
 }
 
-function pushToFirebase() {
+function pushToFirebase(ticket) {
   var bookingInfo = updateBooking();
   bookingInfo.name = NameInput.value;
   bookingInfo.email = EmailInput.value;
   bookingInfo.phone = CellInput.value;
-  let ticketNumber = Math.round(Math.random() * 10000000);
 
 
-  database.ref("bookings/" + ticketNumber).set(bookingInfo);
-  return true;
+  //database.ref("bookings/" + ticket).set(bookingInfo);
+  StepForm.style.display = "none";
+  ConfirmOverlay.style.display = "block";
 }
 
+function generateTicket(ticket) {
+  let ticketRef = database.ref("Bookings/" + ticket);
+  ticketRef.once('value', function(snapshot) { //Recursively generate unused ticket
+    if (!snapshot.exists()) {
+      pushToFirebase(ticket);
+    } else {
+      generateTicket(Math.round(Math.random() * 10000000));
+    }
+  });
+}
 
 addBookingListeners();
