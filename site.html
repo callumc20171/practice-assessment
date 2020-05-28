@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="ConfirmOverlay">
-		<h1 class="title">Your ticket: </h1>
+		<h1 class="title" id="TicketNo">Your ticket: </h1>
 		<p>Your booking has been submitted.</p>
 		<a href="javascript:void(0);" onclick="location.reload()" id="ReloadButton">&times</a>
 	</div>
@@ -113,7 +113,7 @@
 			<label><input type="checkbox" class="extrasCheckbox" value="Facial" data-price="50" for="extras">$50 - Facial</label><br>
 			<label><input type="checkbox" class="extrasCheckbox" value="Massage" data-price="60" for="extras">$60 - Massage</label><br>
 			<label><input type="checkbox" class="extrasCheckbox" value="Breakfast" data-price="25" for="extras">$25 per day - Breakfast</label><br>
-			<label><input type="checkbox" class="extrasCheckbox" value="Cot" data-price="0" for="extras">FREE - Cot</label><br>
+			<label><input type="checkbox" class="extrasCheckbox" value="Cot" data-price="0" for="extras">FREE - Cot</label><br><br>
 			<label>Extra information:<textarea id="ExtraDetail"></textarea></label>
 		</div>
 
@@ -121,6 +121,7 @@
 			<h1 class="title">Check in details</h1>
 			<label>Check in date: <input type="date" id="CheckIn"></label><br>
 			<label>
+				Days:
 				<select class="selectDropdown" id="Days">
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -133,7 +134,6 @@
 					<option value="9">9</option>
 					<option value="10">10</option>
 				</select>
-				Days
 			</label><br>
 			<label id="CheckoutDate">Check out date: <input type="date" id="CheckoutInput" disabled></label>
 		</div>
@@ -150,12 +150,12 @@
 
 		<div class="tab">
 			<h1 class="title">Personal details</h1>
-			<label>Name: <input type="text" class="DetailInput" id="NameInput" placeholder="Your name" pattern="^(\w\w+)\s(\w+)$"></label><br>
-			<label>Email: <input type="email" class="DetailInput" id="EmailInput" placeholder="your@email.com"></label><br>
-			<label>Phone: <input type="text" class="DetailInput" id="CellInput" placeholder="028436473" pattern="02[0-9]\d{6,8}"></label>
+			<label>Name: <input type="text" class="detailInput" id="NameInput" placeholder="Your name" pattern="^(\w\w+)\s(\w+)$"></label><br>
+			<label>Email: <input type="email" class="detailInput" id="EmailInput" placeholder="your@email.com"></label><br>
+			<label>Phone: <input type="text" class="detailInput" id="CellInput" placeholder="028436473" pattern="02[0-9]\d{6,8}"></label>
 		</div>
 		<div style="overflow:auto;">
-		  <div style="float:right;">
+		  <div id="StepButtons">
 		    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
 		    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
 		  </div>

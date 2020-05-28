@@ -50,6 +50,10 @@ button:hover, input[type="button"]:hover, input[type="submit"]:hover {
   background-color: #6C6D71;
 }
 
+input {
+  margin: 12px;
+}
+
 input:invalid {
   background-color: pink;
 }
@@ -78,6 +82,7 @@ input[type=radio], input[type=checkbox] {
   outline: none;
   position: relative;
   z-index: 1000;
+  vertical-align: text-bottom;
 }
 
 
@@ -112,6 +117,11 @@ input[type=radio], input[type=checkbox]:checked::after {
   display: block;
   position: relative;
   z-index: 100;
+}
+
+.detailInput {
+  font-size: 16px;
+  padding: 6px;
 }
 
 
@@ -315,6 +325,18 @@ input[type=radio], input[type=checkbox]:checked::after {
   border: 3px solid #B2BAC9;
 }
 
+#ExtraDetail {
+  width: 20%;
+  height: 64px;
+  margin: 12px;
+  vertical-align: middle;
+  resize: none;
+}
+
+#StepButtons {
+  float: right;
+}
+
 #ConfirmOverlay {
   position: fixed;
   overflow: hidden;
@@ -352,4 +374,37 @@ input[type=radio], input[type=checkbox]:checked::after {
 	#Header {
 		text-align: center;
 	}
+
+  #SelectedRoom {
+    width: 200px;
+    height: 20%;
+    background-size: 125%;
+  }
+
+  #ExtraDetail {
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+    width: 80%;
+  }
+
+  #StepButtons {
+    float: none;
+  }
+
+  .textOverlay {
+    display: none;
+  }
+
+  .slideCaption, .numberText {
+    font-size: 12px;
+  }
+
+  .detailInput {
+    margin-left: 6px;
+    width: 60%;
+    font-size: 12px;
+  }
+
+
 }

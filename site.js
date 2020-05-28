@@ -228,6 +228,7 @@ function pushToFirebase(ticket) {
 
 
   database.ref("bookings/" + ticket).set(bookingInfo);
+  TicketNo.innerHTML += ticket;
   StepForm.style.display = "none";
   ConfirmOverlay.style.display = "block";
 }
